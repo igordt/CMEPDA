@@ -1,7 +1,7 @@
 import numpy as np
 from sklearn import preprocessing
 
-def prep(original,input, dir, index_log, index_quantile, n_quantiles):
+def prep(original,input, dir, index_log, range_quantile, n_quantiles):
     
     if dir == 'forward':
         
@@ -10,15 +10,16 @@ def prep(original,input, dir, index_log, index_quantile, n_quantiles):
         
         scaler = preprocessing.StandardScaler().fit(input)
         input = scaler.transform(input)
-    
-        for j in index_quantile:
-            quantile = preprocessing.QuantileTransformer(n_quantiles=n_quantiles,output_distribution='normal').fit(input[:,j])
+
+        quantile = preprocessing.QuantileTransformer(n_quantiles=n_quantiles,output_distribution='normal').fit(input[range_quantile])
+        for j in range_quantile:
+            print(j)
             input[:,j] = quantile.transform(input[:,j])
     
     elif dir == 'backward':
-            
-        for j in index_quantile:
-            quantile = preprocessing.QuantileTransformer(n_quantiles=n_quantiles,output_distribution='normal').fit(original[:,j])
+        quantile = preprocessing.QuantileTransformer(n_quantiles=n_quantiles,output_distribution='normal').fit(original[range_quantile])
+        for j in range_quantile:
+            print(j)
             input[:,j] = quantile.inverse_transform(input[:,j])
         
         scaler = preprocessing.StandardScaler().fit(original)
