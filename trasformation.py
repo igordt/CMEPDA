@@ -2,6 +2,10 @@ import numpy as np
 from sklearn import preprocessing
 
 def prep(original,transformed, dir, index_log, range_quantile, n_quantiles):
+    """
+    description:
+    
+    """
 
     y = np.copy(original)
 
