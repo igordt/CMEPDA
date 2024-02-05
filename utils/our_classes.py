@@ -9,7 +9,6 @@ class Preprocessor:
     '''
     Description: 
     '''
-
     def __init__(self, settings):
         self.index_log = settings['index_log']
         self.range_quantile = settings['range_quantile']
@@ -45,20 +44,20 @@ class Compressor:
     '''
     Description: 
     '''
-
     def __init__(self, flow, N, limit):
         self.flow = flow
         self.N = N
         self.limit = limit
         self.maxabsscaler = preprocessing.MinMaxScaler()
         
-
     def compress(self,data):
         '''
-        i dati devono essere passati al metodo compress in forma di array numpy
+        Con questo if guardiamo se data è già su cuda, se non lo è lo mettiamo su cuda
         '''
-        data_tensor = torch.tensor(data).to('cuda').float()
-        gaus_tensor = self.flow.transform_to_noise(data_tensor)
+        if isinstance(data, np.ndarray):
+            data = torch.tensor(data).to('cuda').float()
+    
+        gaus_tensor = self.flow.transform_to_noise(data)
         gaus = (gaus_tensor.cpu().detach().numpy())
 
         self.maxabsscaler = preprocessing.MaxAbsScaler().fit(gaus)
