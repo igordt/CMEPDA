@@ -54,7 +54,11 @@ class Compressor:
         
 
     def compress(self,data):
-        gaus_tensor = self.flow.transform_to_noise(data)
+        '''
+        i dati devono essere passati al metodo compress in forma di array numpy
+        '''
+        data_tensor = torch.tensor(data).to('cuda').float()
+        gaus_tensor = self.flow.transform_to_noise(data_tensor)
         gaus = (gaus_tensor.cpu().detach().numpy())
 
         self.maxabsscaler = preprocessing.MaxAbsScaler().fit(gaus)
