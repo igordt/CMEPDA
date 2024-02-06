@@ -20,7 +20,7 @@ def model_definer(num_features, num_iterations, hidden_features):
 
     flow = Flow(transform, base_dist)
     num_parameters = sum(p.numel() for p in flow.parameters() if p.requires_grad)
-    print('Numero di parametri allenabili =',num_parameters)
+    print('Num. iterations = {}, Num. hidden_features = {}, Num. trainable parameters = {}'.format(num_iterations,hidden_features,num_parameters))
     optimizer = optim.Adam(flow.parameters())
 
     flow = flow.to('cuda')
