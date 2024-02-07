@@ -2,7 +2,7 @@
 
 **Repository for the Computing Methods for Experimental Physics and Data Analysis course exam project.**
 
-L. Callisti, M. Carotta, I. Di Tota
+M. Carotta, I. Di Tota
 
 ## Introduction
 The main purpose of this project is to implement a lossy compression, using flow-based generative models.
