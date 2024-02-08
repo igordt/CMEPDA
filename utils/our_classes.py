@@ -61,24 +61,25 @@ class Compressor:
         gaus = (gaus_tensor.cpu().detach().numpy())
 
         self.maxabsscaler = preprocessing.MaxAbsScaler().fit(gaus)
-        gaus = self.maxabsscaler.transform(gaus)
-        gaus = self.limit*gaus
+        gaus_prep = self.maxabsscaler.transform(gaus)
+        gaus_prep = self.limit*gaus_prep
 
-        unif = scipy.special.erf(gaus)
-        unif = unif * 2**self.N
-        data_compressed = unif.astype(int)
+        unif = scipy.special.erf(gaus_prep)
+        unif_prep = unif * 2**self.N
+        data_compressed = unif_prep.astype(int)
 
-        return data_compressed
+        return data_compressed, gaus, unif
     
     def decompress(self,data_compressed):
         unif = data_compressed/2**self.N
         gaus = scipy.special.erfinv(unif)
 
-        gaus = self.maxabsscaler.inverse_transform(gaus)
-        gaus = gaus/self.limit
+        gaus_post = self.maxabsscaler.inverse_transform(gaus)
+        gaus_post = gaus_post/self.limit
 
-        gaus_tensor = torch.tensor(gaus).to('cuda').float()
+        gaus_tensor = torch.tensor(gaus_post).to('cuda').float()
         data_tensor_decompressed, _ = self.flow._transform.inverse(gaus_tensor)
         data_decompressed = data_tensor_decompressed.cpu().detach().numpy()
 
-        return data_decompressed
+        return data_decompressed, gaus
+    
