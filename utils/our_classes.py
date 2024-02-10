@@ -25,14 +25,18 @@ class Preprocessor:
         self.standard_scaler = preprocessing.StandardScaler().fit(y)
         y = self.standard_scaler.transform(y)
 
-        self.quantile_scaler = preprocessing.QuantileTransformer(n_quantiles=self.n_quantiles,output_distribution='normal').fit(y[:,min(self.range_quantile):max(self.range_quantile)+1])
-        y[:,min(self.range_quantile):max(self.range_quantile)+1] = self.quantile_scaler.transform(y[:,min(self.range_quantile):max(self.range_quantile)+1])
+        if self.range_quantile:
+            self.quantile_scaler = preprocessing.QuantileTransformer(n_quantiles=self.n_quantiles,output_distribution='normal').fit(y[:,min(self.range_quantile):max(self.range_quantile)+1])
+            y[:,min(self.range_quantile):max(self.range_quantile)+1] = self.quantile_scaler.transform(y[:,min(self.range_quantile):max(self.range_quantile)+1])    
+
         data_preprocessed = y
         return data_preprocessed
     
     def backward(self, data_reconstructed_preprocessed):
         data_reconstructed = np.copy(data_reconstructed_preprocessed)
-        data_reconstructed[:,min(self.range_quantile):max(self.range_quantile)+1] = self.quantile_scaler.inverse_transform(data_reconstructed[:,min(self.range_quantile):max(self.range_quantile)+1])
+        if self.range_quantile:
+            data_reconstructed[:,min(self.range_quantile):max(self.range_quantile)+1] = self.quantile_scaler.inverse_transform(data_reconstructed[:,min(self.range_quantile):max(self.range_quantile)+1])
+
         data_reconstructed = self.standard_scaler.inverse_transform(data_reconstructed)
         for i in self.index_log:
             data_reconstructed[:,i] = np.exp(data_reconstructed[:,i]) - 10
