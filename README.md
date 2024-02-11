@@ -2,11 +2,11 @@
 
 **Repository for the Computing Methods for Experimental Physics and Data Analysis course exam project.**
 
-Marco Carotta, Igor Di Tota
+Luca Callisti, Marco Carotta, Igor Di Tota
 
 ## Introduction
 The main purpose of this project is to implement a lossy compression, using flow-based generative models.
-Two realizations are proposed: the first is obtained using Affine Autoregressive Flows, as an example of [Normalizing Flows](https://arxiv.org/abs/1912.02762); the second is based on [Flow Matching](https://arxiv.org/abs/2210.02747), the continuous generalization of the first case.
+The realization is obtained using Affine Autoregressive Flows, an example of [Normalizing Flows](https://arxiv.org/abs/1912.02762). As an application of Normalizing Flows, it was also shown how new data can be generated from the Gaussian distributions into which the original data are mapped.
 
 This work was inspired by the [Baler](https://arxiv.org/abs/2305.02283) tool development, where a lossy compression is realized through an autoencoder. For this reason the datasets used were the same, so that a comparison could be made.
 
