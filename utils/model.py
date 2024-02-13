@@ -2,12 +2,15 @@ from nflows import transforms
 from nflows.distributions import StandardNormal
 from nflows.flows import Flow
 from torch import optim
+from torch.optim.lr_scheduler import ReduceLROnPlateau
 from nflows.transforms import RandomPermutation
 from nflows.transforms import MaskedAffineAutoregressiveTransform
 from nflows.transforms import CompositeTransform
 
 
-def model_definer(num_features, num_iterations, hidden_features):
+
+
+def model_definer(num_features, num_iterations, hidden_features, patience, factor, min_lr):
 
     base_dist = StandardNormal(shape=[num_features])
 
@@ -25,5 +28,7 @@ def model_definer(num_features, num_iterations, hidden_features):
 
     flow = flow.to('cuda')
 
-    return flow, optimizer
+    scheduler = ReduceLROnPlateau(optimizer, patience=patience, factor=factor, min_lr=min_lr)
+
+    return flow, optimizer, scheduler
 
