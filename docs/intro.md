@@ -1,6 +1,5 @@
 (intro)=
-
- # Jupyter Book on Read the Docs ciao 
+ # Intro
 
  This example shows a Jupyter Book project built and published on Read the Docs.
  You're encouraged to use it to get inspiration and copy & paste from the files in [the source code repository][github]. In the source repository, you will also find the relevant configuration and instructions for building Jupyter Book projects on Read the Docs.
