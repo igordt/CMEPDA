@@ -9,11 +9,6 @@ parts:
   - file: model_definer
   - file: preprocessor
   - file: compressor
-- caption: Basic examples 🪄
-  chapters:
-  - file: markdown
-  - file: notebooks
-  - file: markdown-notebooks
 - caption: Cool extensions 🕶️
   chapters:
   - file: intersphinx
