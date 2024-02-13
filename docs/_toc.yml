@@ -6,13 +6,11 @@ root: intro
 parts:
 - caption: Classes
   chapters:
-  - file: model_definer
   - file: preprocessor
   - file: compressor
-- caption: Cool extensions 🕶️
+- caption: Functions
   chapters:
-  - file: intersphinx
-  - file: sphinx-examples
-  - file: sphinx-hoverxref
-  - file: sphinx-proof
-
+  - file: model_definer
+- caption: Notebook
+  chapters:
+  - file: originale
