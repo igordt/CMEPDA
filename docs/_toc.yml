@@ -11,6 +11,3 @@ parts:
 - caption: Functions
   chapters:
   - file: model_definer
-- caption: Notebook
-  chapters:
-  - file: originale
