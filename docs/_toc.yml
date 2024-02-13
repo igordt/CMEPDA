@@ -6,7 +6,9 @@ root: intro
 parts:
 - caption: Classes
   chapters:
-  - file: ourclasses
+  - file: model_definer
+  - file: preprocessor
+  - file: compressor
 - caption: Basic examples 🪄
   chapters:
   - file: markdown
