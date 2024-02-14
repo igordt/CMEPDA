@@ -10,7 +10,7 @@ from nflows.transforms import CompositeTransform
 
 
 
-def model_definer(num_features, num_iterations, hidden_features, patience, factor, min_lr):
+def model_definer(num_features, num_iterations, hidden_features, patience, factor, min_lr, initial_lr):
 
     base_dist = StandardNormal(shape=[num_features])
 
@@ -24,7 +24,7 @@ def model_definer(num_features, num_iterations, hidden_features, patience, facto
     flow = Flow(transform, base_dist)
     num_parameters = sum(p.numel() for p in flow.parameters() if p.requires_grad)
     print('Num. iterations = {}, Num. hidden_features = {}, Num. trainable parameters = {}'.format(num_iterations,hidden_features,num_parameters))
-    optimizer = optim.Adam(flow.parameters())
+    optimizer = optim.Adam(flow.parameters(), lr=initial_lr)
 
     flow = flow.to('cuda')
 
