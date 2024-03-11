@@ -1,5 +1,10 @@
 # CMEPDA
 
+.. image:: https://readthedocs.org/projects/marcocarotta-cmepda/badge/?version=latest
+    :target: https://marcocarotta-cmepda.readthedocs.io/en/latest/?badge=latest
+    :alt: Documentation Status
+
+
 **Repository for the Computing Methods for Experimental Physics and Data Analysis course exam project.**
 
 Luca Callisti, Marco Carotta, Igor Di Tota
