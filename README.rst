@@ -10,7 +10,8 @@ CMEPDA
 
 Luca Callisti, Marco Carotta, Igor Di Tota
 
-## Introduction
+Introduction
+=================
 The main purpose of this project is to implement a lossy compression, using flow-based generative models.
 The realization is obtained using Affine Autoregressive Flows, an example of [Normalizing Flows](https://arxiv.org/abs/1912.02762). As an application of Normalizing Flows, it was also shown how new data can be generated from the Gaussian distributions into which the original data are mapped.
 
