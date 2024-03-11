@@ -1,4 +1,4 @@
-# CMEPDA
+#CMEPDA
 
 .. image:: https://readthedocs.org/projects/marcocarotta-cmepda/badge/?version=latest
     :target: https://marcocarotta-cmepda.readthedocs.io/en/latest/?badge=latest
