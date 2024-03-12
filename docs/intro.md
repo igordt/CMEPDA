@@ -11,8 +11,9 @@ The realization is obtained using Affine Autoregressive Flows, an example of [No
 
 This work was inspired by the [Baler](https://arxiv.org/abs/2305.02283) tool development, where a lossy compression is realized through an autoencoder. For this reason the datasets used were the same, so that a comparison could be made.
 
-The document containing the more detailed explanation, along with the results obtained, is available here.
+In this project, compression with two different models was studied, so the files `original_model1.ipynb` and `original_model2.ipynb` were created.
 
+The document `Description_of_the_project_Callisti_Carotta_DiTota` contains the more detailed explanation, along with the results obtained, and is available in this repo.
 
  ## Table of Contents
 
