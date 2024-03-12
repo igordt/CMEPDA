@@ -1,8 +1,8 @@
 ======
 CMEPDA
 ======
-.. image:: https://readthedocs.org/projects/marcocarotta-cmepda/badge/?version=latest
-    :target: https://marcocarotta-cmepda.readthedocs.io/en/latest/?badge=latest
+.. image:: https://readthedocs.org/projects/cmepda-callisticarottaditota/badge/?version=latest
+    :target: https://cmepda-callisticarottaditota.readthedocs.io/en/latest/?badge=latest
     :alt: Documentation Status
 
 

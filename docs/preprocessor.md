@@ -13,7 +13,7 @@ The code is contained in the `our_classes.py` file.
 
 ## Methods:
 
-### **__init__**
+### **\_\_init\_\_**
 Initializes the Preprocessor object.
 
 **Args**:
