@@ -19,7 +19,7 @@ Motivation
 =================
 The goal of this project was to implement a machine learning algorithm to analyze some HEP data. This gave us a chance to learn how to use GitHub and try writing documentation.
 
-Also, since this work was inspired by the development of the `Baler <https://arxiv.org/abs/2305.02283>`_ tool, which achieves lossy compression using an autoencoder, the datasets used are the same, so a comparison can be made.
+Also, since this work was inspired by the development of the `Baler <https://arxiv.org/abs/2305.02283>`_ tool, which achieves lossy compression using an autoencoder, the datasets used are the same, so a comparison could be made.
 
 Project Structure
 =================
