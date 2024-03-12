@@ -1,7 +1,8 @@
-nflows
-torch
 numpy
+scipy
 matplotlib
 sklearn
-scipy
-
+torch
+nflows
+tqdm
+wget
