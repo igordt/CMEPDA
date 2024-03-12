@@ -1,4 +1,3 @@
-(intro)=
 ## Introduction
 
 This is the documentation page for the exam project of the course "Computational Methods for Experimental Physics and Data Analysis".

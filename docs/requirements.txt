@@ -1,7 +1,7 @@
-jupyter-book
-matplotlib
+nflows
+torch
 numpy
-sphinx-inline-tabs
-sphinx-examples
-sphinx-proof
-sphinx-hoverxref
+matplotlib
+sklearn
+scipy
+
