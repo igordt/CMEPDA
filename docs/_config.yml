@@ -4,7 +4,7 @@
 
 title: CMEPDA Exam
 author: Luca Callisti, Marco Carotta, Igor Di Tota
-#logo: logo.png
+logo: logo_cmepda.png
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
