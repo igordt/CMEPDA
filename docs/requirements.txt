@@ -1,7 +1,7 @@
 numpy
 scipy
 matplotlib
-sklearn
+scikit-learn
 torch
 nflows
 tqdm
