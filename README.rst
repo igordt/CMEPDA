@@ -25,4 +25,4 @@ Project Structure
 =================
 In this project, compression with two different models was studied, so the files ``original_model1.ipynb`` and ``original_model2.ipynb`` were created.
 
-The document ``Description_of_the_project_Callisti_Carotta_DiTota`` contains the more detailed explanation, along with the results obtained, and is available in this repo .
+The document ``Description_of_the_project_Callisti_Carotta_DiTota`` contains the more detailed explanation, along with the results obtained, and is available in this repo.
